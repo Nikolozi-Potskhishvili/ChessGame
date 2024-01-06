@@ -1,3 +1,3 @@
 public class Move {
-    public static boolean checkForValidity(Peice peice, )
+   /* public static boolean checkForValidity(Peice peice, )*/
 }
