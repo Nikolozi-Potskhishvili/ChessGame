@@ -9,7 +9,10 @@ public class Game {
     }
 
     private void gameLoop() {
-        while(!gameIsOver) {
+        System.out.println(board.toString());
+        makeMove("White");
+        System.out.println(board.toString());
+        /*while(!gameIsOver) {
             System.out.println(board.toString());
             makeMove("White");
             gameIsOver = checkForMate();
@@ -19,7 +22,7 @@ public class Game {
                 gameIsOver = checkForMate();
             }
 
-        }
+        }*/
     }
 
     private boolean checkForMate() {
@@ -27,6 +30,7 @@ public class Game {
     }
 
     private void makeMove(String white) {
-
+        Move move = new Move(PlayerInput.getPlayersMove());
+        board.updateBoard(move);
     }
 }

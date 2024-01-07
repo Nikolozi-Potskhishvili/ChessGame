@@ -6,6 +6,13 @@ public class Board {
         setCellsColors();
     }
 
+    public void updateBoard(Move move) {
+        Piece tempPiece = board[move.getFirstCellY()][move.getFirstCellX()].getPieceOnCell();
+        board[move.getFirstCellY()][move.getFirstCellX()].removePiece();
+        board[move.getSecondCellY()][move.getFirstCellY()].placePiece(tempPiece);
+
+    }
+
     private void setCellsColors() {
         for(int i = 0; i < board.length; i++) {
             for(int k = 0; k < board[0].length; k++) {

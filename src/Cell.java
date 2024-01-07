@@ -17,6 +17,7 @@ public class Cell {
 
     public void setColor(String color) {
         this.color = color;
+        //Stack<Integer> x = new Stack<>();
     }
 
     public void placePiece(Piece piece) {
