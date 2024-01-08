@@ -21,8 +21,45 @@ public class Move {
         return  move[1][1];
     }
 
-
    public boolean moveIsValid(Board board, String color) {
-       return true;
+       Piece currentPiece = board.getCell(getFirstCellY(),getFirstCellX()).getPieceOnCell();
+       if(currentPiece.getPieceType().equals("P")) {
+
+       } else if(currentPiece.getPieceType().equals("H")) {
+
+       } else if(currentPiece.getPieceType().equals("R")) {
+
+       } else if(currentPiece.getPieceType().equals("B")) {
+
+       } else if(currentPiece.getPieceType().equals("Q")) {
+
+       } else if(currentPiece.getPieceType().equals("K")) {
+
+       }
    }
+
+   public static boolean isValidMoveForPawn() {
+
+   }
+
+   public static boolean isValidMoveForRook() {
+
+   }
+
+   public static boolean isValidMoveForHorse() {
+
+   }
+
+   public static boolean isValidMoveForBishop() {
+
+   }
+
+   public static boolean isValidMoveForQueen() {
+
+   }
+
+   public static boolean isValidMoveForKing() {
+
+   }
+
 }

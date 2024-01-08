@@ -17,10 +17,10 @@ public class PlayerInput {
         int[] secondCell = new int[2];
 
         firstCell[0] = tokenizer.nextToken().charAt(0) - 'A';
-        firstCell[1] = Integer.valueOf(tokenizer.nextToken());
+        firstCell[1] = Integer.valueOf(tokenizer.nextToken()) - 1;
 
         secondCell[0] = tokenizer.nextToken().charAt(0) - 'A';
-        secondCell[1] = Integer.valueOf(tokenizer.nextToken());
+        secondCell[1] = Integer.valueOf(tokenizer.nextToken()) - 1;
 
         coordinates[0] = firstCell;
         coordinates[1] = secondCell;

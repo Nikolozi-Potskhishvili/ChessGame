@@ -22,6 +22,7 @@ public class Cell {
 
     public void placePiece(Piece piece) {
         pieceOnCell = piece;
+
     }
 
     public void removePiece() {
@@ -35,4 +36,9 @@ public class Cell {
     public int getYCoordinate() { return yCoordinate;}
 
     public Piece getPieceOnCell() { return pieceOnCell;}
+
+    public String toString() {
+        if(isEmpty()) return " ";
+        else return pieceOnCell.getPieceType();
+    }
 }

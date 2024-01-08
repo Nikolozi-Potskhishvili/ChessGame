@@ -6,11 +6,21 @@ public class Board {
         setCellsColors();
     }
 
-    public void updateBoard(Move move) {
+    public int updateBoard(Move move) {
+        System.out.println(move.getFirstCellX());
+        System.out.println(move.getFirstCellY());
+        System.out.println(move.getSecondCellX());
+        System.out.println(move.getSecondCellY());
+
         Piece tempPiece = board[move.getFirstCellY()][move.getFirstCellX()].getPieceOnCell();
         board[move.getFirstCellY()][move.getFirstCellX()].removePiece();
-        board[move.getSecondCellY()][move.getFirstCellY()].placePiece(tempPiece);
+        board[move.getSecondCellY()][move.getSecondCellX()].placePiece(tempPiece);
 
+        return 1;
+    }
+
+    public Cell getCell(int row, int col) {
+        return board[row][col];
     }
 
     private void setCellsColors() {
@@ -59,7 +69,7 @@ public class Board {
                 ChessPiecesConsts.QUEEN_X_COORDINATE,
                 new Piece(Piece.PieceTypes.QUEEN, ChessPiecesConsts.QUEEN_X_COORDINATE, ChessPiecesConsts.WHITE_PIECES_Y_COORDINATE, "WHITE"));
         board[ChessPiecesConsts.BLACK_PIECES_Y_COORDINATE][ChessPiecesConsts.QUEEN_X_COORDINATE] = new Cell(ChessPiecesConsts.BLACK_PIECES_Y_COORDINATE,
-                ChessPiecesConsts.LEFT_ROOK_X_COORDINATE,
+                ChessPiecesConsts.QUEEN_X_COORDINATE,
                 new Piece(Piece.PieceTypes.QUEEN, ChessPiecesConsts.QUEEN_X_COORDINATE, ChessPiecesConsts.BLACK_PIECES_Y_COORDINATE, "BLACK"));
     }
 
@@ -119,12 +129,18 @@ public class Board {
 
     public String toString() {
         String str = "";
-        for(int i = 0; i < board.length; i++) {
+        for(int i = board.length - 1; i >= 0; i--) {
+            int currentRow = i + 1;
+            str += currentRow + " ";
             for(int k = 0; k < board[0].length; k++) {
                 if(board[i][k].isEmpty()) str += "#" + " ";
                 else str += board[i][k].getPieceOnCell().getPieceType() + " ";
             }
             str += '\n';
+        }
+        str += "  ";
+        for(int i = 0; i < board[0].length; i++) {
+            str += (char)('A' + i) + " ";
         }
         return str;
     }

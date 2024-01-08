@@ -27,6 +27,7 @@ public class Piece {
     }
 
     public String getPieceType() {
+        if(this == null) return "empty";
         if(type.equals(PieceTypes.BISHOP)) {
             return "B";
         } else if(type.equals(PieceTypes.KNIGHT)) {

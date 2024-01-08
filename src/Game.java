@@ -5,14 +5,16 @@ public class Game {
     private PlayerPieces blacksPieces;
     public Game() {
         this.board = new Board();
+        whitesPieces = new PlayerPieces("White", board);
+        blacksPieces = new PlayerPieces("Black", board);
         gameLoop();
     }
 
     private void gameLoop() {
-        System.out.println(board.toString());
+        /*System.out.println(board.toString());
         makeMove("White");
-        System.out.println(board.toString());
-        /*while(!gameIsOver) {
+        System.out.println(board.toString());*/
+        while(!gameIsOver) {
             System.out.println(board.toString());
             makeMove("White");
             gameIsOver = checkForMate();
@@ -22,15 +24,20 @@ public class Game {
                 gameIsOver = checkForMate();
             }
 
-        }*/
+        }
     }
 
     private boolean checkForMate() {
         return false;
     }
 
-    private void makeMove(String white) {
+    private void makeMove(String color) {
         Move move = new Move(PlayerInput.getPlayersMove());
+        if(color.equals("White")) {
+
+        } else {
+
+        }
         board.updateBoard(move);
     }
 }
