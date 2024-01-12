@@ -1,5 +1,11 @@
-public class King extends ChessPiece {
-    public static void main(String[] args) {
+import java.util.List;
 
+public class King extends ChessPiece {
+    public King(ChessBoard chessBoard, int row, int col, String color) {
+        super(chessBoard, row, col, color);
+    }
+
+    public List<ChessMove> calculateLegalMoves() {
+        return null;
     }
 }

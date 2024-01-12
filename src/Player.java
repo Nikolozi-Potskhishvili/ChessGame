@@ -15,7 +15,26 @@ public class Player {
         playersPieces = new ArrayList<>();
     }
 
+    public boolean isInCheck() {
+        return false;
+    }
+
+    public boolean hasLegalMoves() {
+        return true;
+    }
+
+    public String getColor() {return color;}
+
+    public void makeMove() {
+
+    }
+
     private void initPieces() {
 
     }
+
+    private void updatePieces(ChessMove move) {
+
+    }
+
 }

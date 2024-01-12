@@ -4,11 +4,40 @@ public class ChessMove {
     private ChessPiece movedPiece;
     private boolean isCapture;
 
-    public ChessMove(int startX, int startY, int endX, int endY, ChessPiece movedPiece) {
-        this.startX = startX;
-        this.startY = startY;
-        this.endX = endX;
-        this.endY = endY;
-        this.movedPiece = movedPiece;
+    public ChessMove(String[] input) {
+        convertInputToData(input);
+        //this.movedPiece = movedPiece;
     }
+
+    private void convertInputToData(String[] input) {
+        this.startX = Integer.valueOf(input[1]) - 1;
+        this.startY = input[0].charAt(0) - 'A';
+        this.endX = Integer.valueOf(input[3]) - 1;;
+        this.endY = input[0].charAt(0) - 'A';
+    }
+
+    public int getStartX() {
+        return startX;
+    }
+
+    public int getStartY() {
+        return startY;
+    }
+
+    public int getEndX() {
+        return endX;
+    }
+
+    public int getEndY() {
+        return endY;
+    }
+
+    public ChessPiece getMovedPiece() {
+        return movedPiece;
+    }
+
+    public boolean isCapture() {
+        return isCapture;
+    }
+
 }
