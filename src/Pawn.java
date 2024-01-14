@@ -8,4 +8,8 @@ public class Pawn extends ChessPiece {
     public List<ChessMove> calculateLegalMoves() {
         return null;
     }
+
+    public String getSymbol() {
+        return (color.equals("White")) ? "♟" : "♙";
+    }
 }

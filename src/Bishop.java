@@ -9,4 +9,8 @@ public class Bishop extends ChessPiece {
     public List<ChessMove> calculateLegalMoves() {
         return null;
     }
+
+    public String getSymbol() {
+        return (color.equals("White")) ? "♝" : "♗";
+    }
 }

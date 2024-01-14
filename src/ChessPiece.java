@@ -7,6 +7,7 @@ public abstract class ChessPiece {
     protected int col;
     protected String color;
     public abstract List<ChessMove> calculateLegalMoves();
+    public abstract String getSymbol();
 
     public boolean isLegalMove(ChessMove move) {
         List<ChessMove> legalMoves = calculateLegalMoves();

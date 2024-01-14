@@ -3,10 +3,15 @@ public class ChessGame {
     private Player whitePlayer;
     private Player blackPlayer;
     private int result;
+
     public ChessGame() {
+        this.whitePlayer = new Player("White");
+        this.blackPlayer = new Player("Black");
         this.chessBoard = new ChessBoard(whitePlayer, blackPlayer);
-        this.whitePlayer = new Player(chessBoard, blackPlayer, "White");
-        this.blackPlayer = new Player(chessBoard, whitePlayer, "Black");
+        whitePlayer.setChessBoard(chessBoard);
+        whitePlayer.setOpponent(blackPlayer);
+        blackPlayer.setChessBoard(chessBoard);
+        blackPlayer.setOpponent(whitePlayer);
     }
 
 
