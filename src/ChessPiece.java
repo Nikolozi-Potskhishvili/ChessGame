@@ -6,6 +6,9 @@ public abstract class ChessPiece {
     protected int row;
     protected int col;
     protected String color;
+    protected int[][] directions;
+    protected boolean hasBeenMoved = false;
+
     public abstract List<ChessMove> calculateLegalMoves();
     public abstract String getSymbol();
 
@@ -27,6 +30,10 @@ public abstract class ChessPiece {
     public String getColor() {
         return color;
     }
+
+    public boolean hasBeenMoved() {return hasBeenMoved;}
+
+    public void setHasBeenMoved() {hasBeenMoved = true;}
 
     protected void moveTo(int newRow, int newCol) {
         this.row = newRow;
