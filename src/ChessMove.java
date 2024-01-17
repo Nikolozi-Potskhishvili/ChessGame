@@ -10,10 +10,10 @@ public class ChessMove {
     }
 
     private void convertInputToData(String[] input) {
-        this.startX = Integer.valueOf(input[1]) - 1;
-        this.startY = input[0].charAt(0) - 'A';
-        this.endX = Integer.valueOf(input[3]) - 1;;
-        this.endY = input[0].charAt(0) - 'A';
+        this.startX = input[0].charAt(0) - 'A';
+        this.startY = Integer.valueOf(input[1]) - 1;
+        this.endX = input[2].charAt(0) - 'A';
+        this.endY = Integer.valueOf(input[3]) - 1;
     }
 
     public int getStartX() {

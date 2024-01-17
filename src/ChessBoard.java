@@ -13,6 +13,15 @@ public class ChessBoard implements ChessConstants {
         initBoard();
     }
 
+    public void makeMove(ChessMove move) {
+        System.out.println(move.getStartX());
+        System.out.println(move.getStartY());
+        ChessPiece curPiece = chessBoard[move.getStartY()][move.getStartX()];
+        chessBoard[move.getStartY()][move.getStartX()] = null;
+        chessBoard[move.getEndY()][move.getEndX()] = curPiece;
+        System.out.println(curPiece.getSymbol());
+    }
+
     public ChessPiece getChessPiece(int row, int col) {
         if(chessBoard[row][col] == null) return null;
         else return chessBoard[row][col];

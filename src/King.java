@@ -11,13 +11,13 @@ public class King extends ChessPiece {
         return null;
     }
 
-    private boolean shortCastleIsPossible() {
-
+  /*  private boolean shortCastleIsPossible() {
+        if()
     }
 
     private boolean longCastleIsPossible() {
 
-    }
+    }*/
 
     public String getSymbol() {
         return (color.equals("White")) ? "♚" : "♔";
