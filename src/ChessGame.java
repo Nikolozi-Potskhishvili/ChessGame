@@ -5,6 +5,7 @@ public class ChessGame {
     private Player whitePlayer;
     private Player blackPlayer;
     private int result;
+    private ChessGraphics graphics;
 
     public ChessGame() {
         this.whitePlayer = new Player("White");
@@ -14,6 +15,7 @@ public class ChessGame {
         whitePlayer.setOpponent(blackPlayer);
         blackPlayer.setChessBoard(chessBoard);
         blackPlayer.setOpponent(whitePlayer);
+        graphics = new ChessGraphics(chessBoard);
     }
 
 
@@ -23,11 +25,13 @@ public class ChessGame {
         while(result == 0) {
             System.out.println("White");
             System.out.println(chessBoard.toString());
+            graphics.updateGraphics();
             int whiteRes = handlePlayersMove(whitePlayer);
             if(whiteRes == 1) result = 1;
             else if(whiteRes == 2) result = -2;
             System.out.println("Black");
             System.out.println(chessBoard.toString());
+            graphics.updateGraphics();
             int blackRes = handlePlayersMove(blackPlayer);
             if(blackRes == 1) result = 1;
             else if(blackRes == 2) result = 2;
