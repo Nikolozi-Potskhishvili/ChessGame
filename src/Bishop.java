@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Bishop extends ChessPiece {
@@ -8,7 +9,9 @@ public class Bishop extends ChessPiece {
     }
 
     public List<ChessMove> calculateLegalMoves() {
-        return null;
+        List<ChessMove> legalMoves = new ArrayList<>();
+
+        return legalMoves;
     }
 
     public String getSymbol() {
