@@ -36,6 +36,8 @@ public class ChessBoard implements ChessConstants {
         initQueens();
     }
 
+    public void removePiece(int row, int col) {chessBoard[row][col] = null;}
+
     private void initPawns() {
         for(int i = 0; i < SIZE; i++) {
             chessBoard[WHITE_PAWN_ROW][i] = new Pawn(this, WHITE_PAWN_ROW, i, "White");

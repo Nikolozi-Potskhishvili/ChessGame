@@ -3,11 +3,23 @@ public class ChessMove {
     private int endX, endY;
     private ChessPiece movedPiece;
     private boolean isCapture;
+    private boolean isCheck;
 
     public ChessMove(String[] input) {
         convertInputToData(input);
         //this.movedPiece = movedPiece;
     }
+
+    public ChessMove(int startY, int startX, int endY, int endX) {
+        this.startX = startX;
+        this.startY = startY;
+        this.endX = endX;
+        this.endY = endY;
+    }
+
+    public void setCapture() {isCapture = true;}
+
+    public void setCheck() {isCheck = true;}
 
     private void convertInputToData(String[] input) {
         this.startX = input[0].charAt(0) - 'A';

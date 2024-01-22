@@ -6,7 +6,8 @@ public class ChessGame {
     private Player blackPlayer;
     private int result;
     private ChessGraphics graphics;
-
+    private boolean whiteInCheck = false;
+    private boolean blackInCheck = false;
     public ChessGame() {
         this.whitePlayer = new Player("White");
         this.blackPlayer = new Player("Black");
@@ -56,7 +57,10 @@ public class ChessGame {
             System.out.println(Arrays.toString(input));
             move = new ChessMove(input);
             piece = chessBoard.getChessPiece(move.getStartY(), move.getStartX());
-        } while (piece == null || !piece.getColor().equals(player.getColor()));
+        } while (piece == null || !piece.getColor().equals(player.getColor()) || !piece.isLegalMove(move));
+        if(move.isCapture()) {
+            chessBoard.removePiece(move.getEndY(), move.getEndX());
+        }
         chessBoard.makeMove(move);
     }
 }

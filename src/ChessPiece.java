@@ -1,6 +1,6 @@
 import java.util.List;
 
-public abstract class ChessPiece {
+public abstract class ChessPiece implements ChessConstants {
     protected ChessBoard chessBoard;
 
     protected int row;
@@ -17,6 +17,8 @@ public abstract class ChessPiece {
         /*ChessMove testMove = new ChessMove(new String[]{String.valueOf(row),
                 String.valueOf(col), String.valueOf(endRow), String.valueOf(endCol)}, this);*/
 
+        if(legalMoves == null) return false;
+        System.out.println(legalMoves.toString());
         return legalMoves.contains(move);
     }
 
@@ -40,8 +42,8 @@ public abstract class ChessPiece {
         this.col = newCol;
     }
 
-    private boolean isValidPosition(int row, int col) {
-        return row >= 0 && row < ChessBoard.SIZE && col >= 0 && col < ChessBoard.SIZE;
+    protected boolean isValidPosition(int row, int col) {
+        return row >= 0 && row < SIZE && col >= 0 && col < SIZE;
     }
 
     public int getRow() {
